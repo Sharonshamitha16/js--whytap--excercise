@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+   let a;
+   setTimeout(()=>{
+    a=10
+   },2000)
+   console.log(a) 
+   // o/p is undefined
+
+
+
+//    let food
+//    function order(){
+//     setTimeout(()=>{
+//         food='pizza'
+//         console.log(food)
+//     },1000)
+//    }
+   
+//asynchronous 
+   let food
+   function order(eat){
+    setTimeout(()=>{
+        food='pizza'
+        // console.log(food)
+        eat()
+    },1000)
+   }
+   function eat(){
+    console.log(food)
+   }
+
+order(eat)
+//  using the asynchronous function inside and call backing 
+
+// promises 
+//-- pending
+//-resolve
+//-- reject 
+
+
+//due to callback hell we move to promises
+function demo(){
+return new Promise((resolve, reject)=>{
+    // resolve ('data recieved') // this makes the o/p as fullfillled sucesss
+
+    reject("data not recived") // this makes faiure 
+})
+
+
+}
+function success(msg){
+console.log( 'success '+ msg)
+}
+function failure(msg){
+console.log('failure '+ msg)
+}
+console.log(demo())
+
+demo().then(success,failure).then()// this is promising chain
+
+
+demo().then(success).catch(failure)// it acts like a try catch block
+// using promise wee need to use then function
+</script>
+</html>

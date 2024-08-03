@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function demo(callback){// higher order function eg:- map,reduce,filter
+        callback()
+    }
+    function add(){
+        console.log("hello")
+    }
+    demo(add)// callback function
+    demo(()=>{
+        console.log("hello")
+    })
+</script>
+</html>

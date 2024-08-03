@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Backgroundcolor: <span class="text">none</span></h1>
+    <button id="btn">click here</button>
+   
+    </div>
+
+</body>
+
+<script>
+    const button = document.getElementById('btn')
+    const value = document.querySelector('.text')
+    let code = '0123456789ABCDEF';
+    let code1 =['green','red','blue']
+    button.addEventListener('click',()=>{
+        let color ='#'
+        for(i=0;i<6;i++){
+            color+=code[random()]
+        }
+        document.body.style.backgroundColor=color
+        value.textContent=color
+    })
+    function random() {
+        return Math.floor(Math.random() * code.length)
+    }
+
+
+    
+
+</script>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    .container {
+        height: 50vh;
+        width: 60vw;
+        border: 4px solid black;
+        border-radius: 9px;
+        display: flex;
+        align-items: flex-end;
+        margin: auto auto auto;
+        /* background-color: rgb(78, 76, 76); */
+    }
+
+    .container .col {
+        align-items: left;
+        /* margin: 20px; */
+        height: 50vh;
+        width: 30vw;
+        border: 2px solid black;
+        border-radius: 5px 1px 1px;
+
+    }
+
+    .bill {
+        font-family: "poppins", "sans-serif";
+        display: flex;
+        flex-direction: column;
+        padding: 2px;
+        margin: 15px;
+        font-size: large;
+    }
+
+    .bill_ip {
+        font-family: "poppins", "sans-serif";
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        margin: 12px auto;
+        margin-left: 12px;
+        font-size: large;
+        text-align: center;
+        /* position:absolute; */
+    }
+
+    input {
+        border: 2px solid rgb(187, 179, 179);
+        margin: 5px;
+        padding: 15px;
+    }
+
+    label {
+        margin: 10px;
+        padding: 10px;
+        font-weight: bolder;
+
+    }
+
+    button {
+        padding: 5px;
+        font-size: 20px;
+        margin-top: 5px;
+        margin-left: 6px;
+        border: 10px;
+        background-color: rgb(148, 143, 137);
+
+        border-right: 10px;
+        align-items: center;
+        justify-content: center;
+        margin-right: 7px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: rgb(116, 110, 110);
+    }
+
+
+
+    .sub {
+        position: absolute;
+        left: 20.75%;
+        font-size: 20px;
+        margin-top: -0.3px;
+        padding: 5px;
+
+
+    }
+
+    .add2 {
+        position: absolute;
+        right: 61.5%;
+        top: 37.35%;
+        font-size: 20px;
+    }
+
+    .add1 {
+        position: absolute;
+        right: 61.5%;
+        top: 52.45%;
+        font-size: 20px;
+
+    }
+
+    .tip_total {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    h3 {
+        margin: 10%;
+        padding: 8%;
+        font-size: 28px
+    }
+
+    h1 {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <header>
+        <h1>TIP CALCULATOR</h1>
+    </header>
+    <div class="container">
+
+        <div class="col">
+            <label for="bill" class="bill">Bill</label>
+            <input type="text" class="bill_ip" value=0.0 onkeyup="calculatebill()" id="bill">
+            <!-- onkeyup helps to capture the value -->
+            <label for="tip" class="bill">Tip %</label>
+            <button type="submit" class="sub" id="decreasetip">-</button>
+            <input type="text" class="bill_ip" value=15%>
+            <button type="submit" class="add1" id="increasetip">+</button>
+
+            <label for="people" class="bill">Number of people</label>
+            <button type="submit" class="sub" id="decreasepeople">-</button>
+            <input type="text" class="bill_ip" value=1>
+            <button type="submit" class="add2" id="increasepeople">+</button>
+        </div>
+
+        <div class="col">
+            <h3 class="tip_total">Tip <span id="dollar_tip">$0.00</span></h3>
+
+            <h3 class="tip_total">Total <span id="dollar_total">$0.00</span></h3>
+
+        </div>
+    </div>
+</body>
+<script>
+    let amount = document.getElementById('bill')
+    let percent = document.getElementById('percent')
+    let increasetip = document.getElementById('increasetip')
+    let decreasetip = document.getElementById('decreasetip')
+
+    let increasepeople = document.getElementById('increasepeople')
+    let decreasePeople = document.getElementById('decreasepeople')
+    let person = document.getElementById('person')
+
+    let givenbill = 0 //given bill amount
+    let pt = 0 // percent of tip 
+    let complete = 0 //total  bill amount 
+    let people = 1 //no of persons
+    let final = 0 // final amount
+    function calculatebill() {
+        givenbill = parseInt(amount.value)
+        pt = parseInt(percent.value)
+
+        if(bill>0 &&pt>0)
+        complete = given + (given * pt / 100)
+        //    this is saying the total bill + tip in 10%
+        console.log(complete)
+        display();
+
+    }
+    // this will increase the people count 
+    increase.addEventListener('click', () => {
+        people++;
+        person.textContent = people
+        display()
+    })
+    decrease.addEventListener('click', () => {
+        if (person <= 1) {
+            return
+        }
+        people--;
+        person.textContent = people
+        display()
+    })
+    function display() {
+        final = complete / people
+        per.textContent = final.textContent.tofixed(2)
+    }
+</script>
+
+</html>

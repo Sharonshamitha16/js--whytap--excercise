@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    console.log("this is map")
+    let a = [{ name: "arun", age: 15 }, { name: "ajay", age: 10 },{ name: "sharon", age: 25 },{ name: "shami", age: 22 }]
+    a.map((item, index) => { //arrow function
+        // map returns u everything given in the array of objects
+        console.log(index)
+        //item.age=0
+        // console.log(`the name is ${item.name} and age is ${item.age}`)
+        console.log("the name is "+ item.name +" age is "+ item.age)
+    })
+    
+    b=a.map((item)=>item.age+10)
+     console.log(b)
+
+
+    console.log("this is filter")
+
+    b=a.filter((item)=>item.age<18) // filter used to satisfy the condition and gets 
+    console.log(b)
+
+    console.log("this is foreach") 
+
+    b=a.forEach((item, id) => { 
+        console.log(id)
+        
+        console.log(`the name is ${item.name} and age is ${item.age}`)
+    })
+    console.log(b)// foreach will not return the value like map
+
+
+// reduce
+console.log("this is reduce") 
+    let s =[1,2,3,4,5]
+    h=s.reduce((acc,val)=>acc+val,5)
+    console.log(h)
+</script>
+
+</html>

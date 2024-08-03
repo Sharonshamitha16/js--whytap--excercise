@@ -1,0 +1,4 @@
+console.log("string consideration", concatination, number or value prints in console)
+document.write(using for write)
+normal function and arrow function has syntax differcence an no need to give return any explicitly
+
