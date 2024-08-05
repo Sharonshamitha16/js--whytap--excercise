@@ -1,0 +1,234 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="name">NAME:</label>
+    <input type="text" name="" id="name">
+
+    <label for="age">AGE
+    </label>
+    <input type="text" name="" id="age">
+
+    <button type="submit" onclick="handlesubmit()"></button>
+</body>
+
+</html>
+
+
+
+JAVASCRIPT
+--create a array of objects
+for eg:
+let persons=[{
+name: "sharon" , age:21
+}, {name: "sam" , age:17}]
+
+--create a table to display in the html use innerhtml to
+display in the html
+
+let table =document.getElementbyId('table')
+
+--this is taking the name and age from the html and storing or putting in table by id
+
+let namei = doucment.getElementbuyId('name')
+let agei = doucment.getElementbuyId('age')
+
+
+
+-- if we use normal loop what happens..
+
+for(i=0;i<persons.length;i++){ table.innerHtml=`<tr>
+    <td> ${persons[1].name}</td>
+    <td>${persons[1].age}</td>
+    </tr>`
+    }
+
+    -- if we put like this we get the last index printed bccoz this gets
+    replaced by the 0 index if we need to have continuosly then we can add
+
+
+    -- replaced is caused due to the innerHtml it 1stly prints the 0 index then
+    it takes the 0 index and replaces the 1st index
+
+
+    for(i=0;i<persons.length;i++){ table.innerHtml+=`<tr>
+        <td> ${persons[1].name}</td>
+        <td>${persons[1].age}</td>
+        </tr>`
+        }
+
+        --this will write in the dom directly which caused to rewrite on the dom
+        instead we can use map which won't replaces instead it returns the object
+
+
+
+        persons.map(person,i=>{
+        table.innerHtml=`<tr>
+            <td> ${persons[1].name}</td>
+            <td>${persons[1].age}</td>
+        </tr>`
+        })
+
+        --this won't be printed as it's given outside the innerHtm
+        --curly bracktes also cause map not to print ecplicitily
+
+        table.innerHtml=`persons.map((person,i)=><tr>
+            <td> ${persons[1].name}</td>
+            <td>${persons[1].age}</td>
+
+        </tr>`)
+
+
+
+
+        --this is using map this returns implicitily not itreates..
+        --if {} given we need to give explicityly return statememnt
+
+
+        ie.
+        table.innerHtml=`persons.map((person,i)=>{ return`<tr>
+            <td> ${persons[1].name}</td>
+            <td>${persons[1].age}</td>
+
+        </tr>`})
+
+        <!-- READING A ARRAY  -->
+
+
+        function handlesubmit(){
+        let name = namei.value
+        let age = agei.value
+        let temp ={name:name , age:age }
+        //this line says that creating a temp variable to store the array of objects which we get
+        from the html store it in a new variable and segegating in anotther variable to get only the value
+        persons.push(temp)
+        display()
+        clear()
+        }
+
+
+        --this pushes to the array but if we need to see the o/p we need to display it like how we read a array
+        -- write a fn named display an call in the handle submit to see the push getting puished in array
+
+
+
+        function display(){
+        table.innerHtml=`persons.map((person,i)=><tr>
+            <td> ${persons[1].name}</td>
+            <td>${persons[1].age}</td>
+
+        </tr>`)
+
+        }
+
+        -- we will be facing a issue saying after submit we need to clear the data so we can use a fn and make the array
+        of objects empty
+
+
+
+        function clear(){
+        namei.value=''
+        age.value=''
+        }
+
+
+        <!-- insertion of an array over -->
+
+
+        -- for deletion we need to add button in every array of objectr we add so..
+
+        function display(){
+        table.innerHtml=`persons.map((person,i)=><tr>
+            <td> ${persons[1].name}</td>
+            <td>${persons[1].age}</td>
+            <td><button type="submit" onclick=del(${i})>delete</button></td>
+        </tr>`)}
+
+        -- have creted a button and also got the index of which element to be deleted
+        --next step is to delete for that we write fn for onclick
+
+
+        function del(id){
+
+        let temp=persons.filter((persons,i)=>i!=id)
+
+        //this is having i from the index when
+        deelte btn is clicked and other id is checking with the i which we get
+
+        // why != is used bcoz it only filters and give the remaining elements
+        we don't want the deleting element we need the rest of it..
+
+        // filter is used to satisfy the conditions given
+
+        }
+
+
+
+
+        <!-- deletion of array -->
+
+
+        -- for editing same like delete btn edit should also be created
+
+        function display(){
+        table.innerHtml=`persons.map((person,i)=><tr>
+            <td> ${persons[1].name}</td>
+            <td>${persons[1].age}</td>
+            <td><button type="submit" onclick=del(${i})>delete</button></td>
+            <td><button type="submit" onclick=editing(${i})>delete</button></td>
+        </tr>`)}
+
+
+
+
+        -- after getting the id from the edit need to access the elemnt by changing them
+
+
+        function editing(id)
+        {
+        namei.value = persons[id].name
+        agei.value = persons[id].age
+
+        // this is bcoz we can acccess only 1 edit in a array at a time so directly we can change and print
+        }
+
+        -- there is a flaw in this it will print again in next row
+        -- as we write only one fn for submit
+
+
+        function handlesubmit(){
+        // if we need to add a new row then code goes like this
+        if(edit==-1){
+        let name = namei.value
+        let age = agei.value
+        //stroing the value in a variable
+        let temp ={name:name , age:age }
+        //this line says that creating a temp variable to store the array of objects which we get
+        from the html store it in a new variable and segegating in anotther variable to get only the value
+        persons.push(temp)
+        //pushing is a fn in array to insert a value at the end of the array
+        display()
+        // calling display fn and printing it
+        clear()
+        //after printing clearing it
+        }
+
+
+        // if we need to edit then
+        else{
+        let name = namei.value
+        let age = agei.value
+        let temp ={name:name , age:age }
+        persons[edit]=temp
+        //this is nothing as we do for inserting here we need to access the editing fn which directly deals with the id 
+        edit=-1
+        // this is now the edit is holding the edit value so to make it as defult make -1 only then conflicts won't occur
+        }
+        }

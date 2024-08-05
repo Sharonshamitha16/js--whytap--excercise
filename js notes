@@ -2,3 +2,17 @@ console.log("string consideration", concatination, number or value prints in con
 document.write(using for write)
 normal function and arrow function has syntax differcence an no need to give return any explicitly
 
+this keyword is used to call thge currrent object 
+ for Eg
+
+
+ class print{
+    let name = "sara"
+
+    display(){
+        console.log(this.name)
+    }
+ }
+
+ let person1  = new  print()
+ person1.name()

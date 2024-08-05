@@ -16,12 +16,13 @@
     <div class="container">
         <div class="row">
             <div class="col-6  d-flex
-            flex-column m-3 justify-content-between">
+            flex-column m-3 justify-content-end">
                 <label for="" class="p-3">Name</label>
-                <input type="text" name="" id="name"  >
+                <input type="text" name="" id="name">
                 <label for="" class="p-3">Age:</label>
+                </head>
                 <input type="text" name="" id="age">
-                <button onclick="handlesubmit()">submit</button>
+                <button onclick="handlesubmit()" class="m-2">submit</button>
             </div>
             <div class="col-6">
                 <table class="table m-5 b-2" id="table">
@@ -43,7 +44,7 @@
         let agei = document.getElementById('age')
         let table = document.getElementById('table')
 
-        let edit = -1
+        let edit = -1 //bcoz the index starts with 0 -1 means delete
         function handlesubmit() {
             if (edit == -1) {
                 let name = namei.value
