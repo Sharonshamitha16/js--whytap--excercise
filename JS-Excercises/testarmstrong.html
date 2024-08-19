@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // let sum = 153;
+    // let sum_string = sum.toString();
+    // console.log(sum_string.length)
+    // let sum_len = sum_string.length;
+    // function armstrong(sum){
+    //     let add=0
+    // for (let i=0;i<sum_len;i++){
+
+    //     add+=Number(sum_string[i])**sum_len
+    //     // add = add+Number(sum_string[i])**sum_len
+
+    //     // add = 0+1**3==> 1 add=1
+
+    //     //5**3=125+1= 126 ==>  add =126
+
+    //     // 3**3 = 27  add=126+27=153        
+    // }
+    // if(add===sum){
+    //     console.log("armstrong number")
+    // }
+    // else{
+    //     console.log("not a armstrong number")
+    // }
+    // }
+    // armstrong(sum);
+
+
+
+    let sum = 153;
+
+
+    function armstrong(sum) {
+
+        let sum_len = 0;
+        let temp = sum;
+        //153>0 15>0 1>0 0>0
+        while (temp > 0) {
+            sum_len++; //0--1 --2 -- 3 
+            temp = (temp - (temp % 10))/10 // 10; 153-153%10/10  153-3=150/10 15 
+        }
+        let add = 0
+        // 153  153>0 --1st  //  153-(153%10)/10 = 153-3/10 = 150/10 = 15 --2nd 15 15>0  15-(15%10)/10 15-5/10 10/10  1--3rd  1 1>0 1-(1%10)/10   1-1/10 0/10 0  --4th 0>0 
+        for (let temp = sum; temp > 0; temp = (temp - (temp % 10) / 10)) {
+            let digit = temp % 10
+            // 153%10 = 3
+            add += digit ** sum_len
+
+            //   add = 0+3**3 = 27    
+        }
+        if (add === sum) {
+            console.log("armstrong number");
+        }
+        else {
+            console.log("not a armstrong number");
+        }
+    }
+    armstrong(sum);
+</script>
+
+</html>
