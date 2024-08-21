@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arr= [];
+
+    let blindArray=[1,"dummy", true, 10,false,"posts"]
+    let instaPosts=[
+       { id: 1,
+        postType:"Image",
+        tag: "Naakul Mehta",
+        private:false,
+        caption:"Nature Vibe",
+        music:" random mmusic"
+       },
+       { id: 2,
+        postType:"Video",
+        tag: "Karen vincent",
+        private:false,
+        caption:"comedy reels",
+        music:" random mmusic"
+       },
+       { id: 3,
+        postType:"Image",
+        tag: "trading",
+        private:true,
+        caption:"motivation",
+        music:"motivational songs"
+       },
+       { id: 4,
+        postType:"Video",
+        tag: "investment",
+        private:false,
+        caption:"sip",
+        music:"own voice"
+       }
+    ]
+     
+    let spotify=[
+    { id: 11,
+        songType:"Motivational",
+        lang: "Eng",
+        gnere:"Rock",
+        minutes:3.21,
+        singername:"Elie goudling"
+       },
+       { id: 12,
+        songType:"Devotional",
+        lang: "Eng",
+        gnere:"Melody",
+        minutes:4.25,
+        singername:"Deo Meon"
+       },
+       { id: 13,
+        songType:"rap",
+        lang: "Eng",
+        gnere:"fast_beat",
+        minutes:3.21,
+        singername:"James authur"
+       },
+       { id: 14,
+        songType:"movie_song",
+        lang: "Eng",
+        gnere:"K-pop",
+        minutes:3.21,
+        singername:"kelvin_silverstar"
+       }
+    
+    ]
+    const fun =()=>{}
+    let no_Of_privateReels = instaPosts.map((e)=>{
+        if(e.private){console.log(e);}
+        })
+        // or
+        let maps1 = instaPosts.map((item)=>{
+            if(item.private){
+                return item;
+            }
+        })
+        console.log(maps1 ,"used return")
+
+    let TotalReelsWatched = instaPosts.length;
+    console.log("Today Watched Reels:", TotalReelsWatched)
+
+    let publicData=[];
+    let vidoeData =[];
+    let publicFilterout = instaPosts.map((privatefil)=>{
+        if(privatefil.private=="false"){
+          publicData.push(e)
+        }
+    });
+    console.log(publicData)
+
+let videofilterout = instaPosts.map((videofilter)=>{
+    if(videofilter.postType=="video"){
+    vidoeData.push(videofilter)
+    }
+})
+</script>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const Amazon_selling_keyboards = [
+        {
+            id: 'KB216',
+            brand: 'Dell',
+            Connectivity_Technology: 'Wired',
+            special_features: 'backlit',
+            price: 500,
+            Keyboard_desc: 'Multimedia',
+            TKL: false,
+            currency: '₹',
+            warranty: '1yr',
+            type: 'QWERTY'
+        },
+        {
+            id: 'KB266',
+            brand: 'Zebronics',
+            Connectivity_Technology: 'Wired',
+            special_features: 'no-backlit',
+            price: 500,
+            Keyboard_desc: 'usb',
+            TKL: false,
+            currency: '₹',
+            warranty: '1yr',
+            type: 'QWERTY'
+        },
+        {
+            id: '350',
+            brand: "HP",
+            Connectivity_Technology: 'Wired',
+            special_features: 'backlit',
+            price: 1749,
+            Keyboard_desc: 'Multimedia',
+            TKL: true,
+            currency: '₹',
+            warranty: '3yr',
+            type: 'Mechanical'
+        },
+        {
+            id: 'K380s',
+            brand: 'Logitech',
+            Connectivity_Technology: 'Bluetooth',
+            special_features: 'backlit',
+            price: 3195,
+            Keyboard_desc: 'Multi Functional',
+            TKL: true,
+            currency: '₹',
+            warranty: '0.5yr',
+            type: 'Tonal Graphite'
+        },
+        {
+            id: 'CB-GK-34',
+            brand: 'Cosmic_Byte',
+            Connectivity_Technology: 'Wired',
+            special_features: 'backlit',
+            price: 2999,
+            Keyboard_desc: 'Multimedia',
+            TKL: true,
+            currency: '₹',
+            type: 'Mechanical'
+        },
+        {
+            id: 'K621',
+            brand: 'Redragon',
+            Connectivity_Technology: 'Wireless, Bluetooth and wired',
+            special_features: 'rgb',
+            price: 5290,
+            Keyboard_desc: 'Multimedia',
+            TKL: true,
+            currency: '₹',
+            type: "Mechanical"
+        },
+        {
+            id: 'MK1400',
+            brand: 'Ant Esports',
+            Connectivity_Technology: 'Wired',
+            special_features: 'backlit',
+            price: 549,
+            Keyboard_desc: 'usb',
+            TKL: false,
+            currency: '₹',
+            type: "Membrane"
+        },
+        {
+            id: 'BK10',
+            brand: 'iClever',
+            Connectivity_Technology: 'Bluetooth',
+            special_features: 'Rechargeable',
+            price: 2659,
+            Keyboard_desc: 'Bluetooth Keyboard, Scissor Switch, Compact Size',
+            TKL: false,
+            currency: '₹',
+            type: "Membrane"
+        },
+        {
+            id: 'MK-60',
+            brand: 'MageGee',
+            Connectivity_Technology: 'MiniWired',
+            special_features: 'backlit',
+            price: 2249,
+            Keyboard_desc: 'Gaming',
+            TKL: true,
+            currency: '₹',
+            type: "Mechanical"
+        }
+    ]
+
+    let below1000rate = [];
+
+    const Filteroutbelow100 = Amazon_selling_keyboards.map((bel_thousand) => {
+        if (bel_thousand.price < 1000) {
+            below1000rate.push(bel_thousand)
+        }
+    })
+    console.log(below1000rate, "are the products below ₹1000")
+
+
+    const checkmin500 = Amazon_selling_keyboards.map((min500check) => min500check.price.toString().includes('500'));
+
+    if (checkmin500) {
+        console.log("Yes, there is a keyboard with '500' in the price:", checkmin500)
+    }
+
+    let above100rate = [];
+    const Filterabove1000 = Amazon_selling_keyboards.map((abv_1000 => {
+        if (abv_1000.price > 1000) {
+            above100rate.push(abv_1000)
+        }
+    }))
+
+    console.log(above100rate, "are the products above ₹1000")
+</script>
+
+</html>

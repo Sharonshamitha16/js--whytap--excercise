@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const SecondHandLaptops=[
+        {
+            id:1,
+            Brand:"Asus",
+            model:'0808',
+            price:40000,
+            used:true,
+            demo:false,
+        },
+        {
+            id:2,
+            Brand:"Dell",
+            model:'0909',
+            price:45000,
+            used:true,
+            demo:false,
+        },
+        {
+            id:3,
+            Brand:"Lenovo",
+            model:'1010',
+            price:55000,
+            used:true,
+            demo:false,
+        },
+        {
+            id:4,
+            Brand:"HP",
+            model:'HP-1001',
+            price:45000,
+            used:false,
+            demo:true,
+        },
+        {
+            id:5,
+            Brand:"Toshiba",
+            model:'Ts-001',
+            price:34000,
+            used:true,
+            demo:false,
+        },
+        {
+            id:6,
+            Brand:"Toshiba",
+            model:'Ts-001',
+            price:34000,
+            used:false,
+            demo:true,
+        },
+
+    ]
+    let usedLap=[];
+    let demounit=[]
+
+const Filters = SecondHandLaptops.map((laptop , index)=>{
+    if(laptop.demo==true){
+        demounit.push(laptop)
+    }
+    if(laptop.used==true){
+        usedLap.push(laptop)
+    }
+})
+
+console.log("used laptops",usedLap)
+console.log("demo unit laptops",demounit)
+</script>
+</html>

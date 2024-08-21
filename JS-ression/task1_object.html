@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-
 </body>
 <script>
     // ///////////////// dataset --- menu list ------------ ////////////// //
        let HannaBakes = {
-        sweettreats: {
-            ST_1: {
+        sweettreats: {            ST_1: {
                 product:'Muffins',
                 amount: 6,
                 quantity: 10,
@@ -208,7 +205,7 @@
         HannaBakes.sweettreats.ST_12.quantity+
         HannaBakes.sweettreats.ST_13.quantity
 
-    console.log(total_sweettreats, "are the total products of sweet treats from HANNA BAKES...!!!")
+    console.log(total_sweettreats, "are the total product count of sweet treats from HANNA BAKES...!!!")
 
 
 
@@ -225,7 +222,7 @@
 
 
 
-    console.log(total_cakes_from_hannabakes, "are the total products of cakes from HANNA BAKES...!!!")
+    console.log(total_cakes_from_hannabakes, "are the total product count of cakes from HANNA BAKES...!!!")
 
 
 
@@ -348,38 +345,70 @@ switch(customer_item){
         console.log("Item not found.");
         break;
 }
-console.log(bill_item)
+console.log( "Bill amount of the customer",bill_item)
+// updating the remaining value of each item in sweet treats
+const sweettreatscode =['ST_1','ST_2','ST_3','ST_4','ST_5','ST_6','ST_7','ST_8','ST_9','ST_10','ST_11','ST_12','ST_13']
 
+sweettreatscode.map((codes)=>{
+ HannaBakes.sweettreats[codes].quantity-=customer_quantity
+ })
+// HannaBakes.sweettreats.ST_1.quantity -= customer_quantity;
+// HannaBakes.sweettreats.ST_2.quantity -= customer_quantity;
+// HannaBakes.sweettreats.ST_3.quantity -= customer_quantity;
+// HannaBakes.sweettreats.ST_4.quantity -= customer_quantity;
+// HannaBakes.sweettreats.ST_5.quantity -= customer_quantity;
+// HannaBakes.sweettreats.ST_6.quantity -= customer_quantity;
+// HannaBakes.sweettreats.ST_7.quantity -= customer_quantity;
+// HannaBakes.sweettreats.ST_8.quantity -= customer_quantity;
+// HannaBakes.sweettreats.ST_9.quantity -= customer_quantity;
+// HannaBakes.sweettreats.ST_10.quantity -= customer_quantity;
+// HannaBakes.sweettreats.ST_11.quantity -= customer_quantity;
+// HannaBakes.sweettreats.ST_12.quantity -= customer_quantity;
+// HannaBakes.sweettreats.ST_13.quantity -= customer_quantity;
 
 // updating the remaining value of each item in sweet treats
+const cakeCodes = [
+    "CS_1", "CS_2", "CS_3", "CS_4", "CS_5", 
+    "CS_6", "CS_7", "CS_8"
+];
 
-HannaBakes.sweettreats.ST_1.quantity -= customer_quantity;
-HannaBakes.sweettreats.ST_2.quantity -= customer_quantity;
-HannaBakes.sweettreats.ST_3.quantity -= customer_quantity;
-HannaBakes.sweettreats.ST_4.quantity -= customer_quantity;
-HannaBakes.sweettreats.ST_5.quantity -= customer_quantity;
-HannaBakes.sweettreats.ST_6.quantity -= customer_quantity;
-HannaBakes.sweettreats.ST_7.quantity -= customer_quantity;
-HannaBakes.sweettreats.ST_8.quantity -= customer_quantity;
-HannaBakes.sweettreats.ST_9.quantity -= customer_quantity;
-HannaBakes.sweettreats.ST_10.quantity -= customer_quantity;
-HannaBakes.sweettreats.ST_11.quantity -= customer_quantity;
-HannaBakes.sweettreats.ST_12.quantity -= customer_quantity;
-HannaBakes.sweettreats.ST_13.quantity -= customer_quantity;
-
-// updating the remaining value of each item in sweet treats
-HannaBakes.cakes.CS_1.quantity -= customer_quantity;
-HannaBakes.cakes.CS_2.quantity -= customer_quantity;
-HannaBakes.cakes.CS_3.quantity -= customer_quantity;
-HannaBakes.cakes.CS_4.quantity -= customer_quantity;
-HannaBakes.cakes.CS_5.quantity -= customer_quantity;
-HannaBakes.cakes.CS_6.quantity -= customer_quantity;
-HannaBakes.cakes.CS_7.quantity -= customer_quantity;
-HannaBakes.cakes.CS_8.quantity -= customer_quantity;
+cakeCodes.map((codes)=>{
+    HannaBakes.cakes[codes].quantity-=customer_quantity;
+})
+// HannaBakes.cakes.CS_1.quantity -= customer_quantity;
+// HannaBakes.cakes.CS_2.quantity -= customer_quantity;
+// HannaBakes.cakes.CS_3.quantity -= customer_quantity;
+// HannaBakes.cakes.CS_4.quantity -= customer_quantity;
+// HannaBakes.cakes.CS_5.quantity -= customer_quantity;
+// HannaBakes.cakes.CS_6.quantity -= customer_quantity;
+// HannaBakes.cakes.CS_7.quantity -= customer_quantity;
+// HannaBakes.cakes.CS_8.quantity -= customer_quantity;
 
 
-console.log("Remaining items of Muffins",HannaBakes.sweettreats.ST_1.quantity);
+console.log("Remaining items of Muffins:",HannaBakes.sweettreats.ST_1.quantity);
+ console.log("Remaining items of Cupcakes",HannaBakes.sweettreats.ST_2.quantity);
+console.log("Remaining items of Popsicles",HannaBakes.sweettreats.ST_3.quantity);
+console.log("Remaining items of CakePops",HannaBakes.sweettreats.ST_4.quantity);
+console.log("Remaining items of Brownies",HannaBakes.sweettreats.ST_5.quantity);
+console.log("Remaining items of Blondies",HannaBakes.sweettreats.ST_6.quantity);
+console.log("Remaining items of Macarons",HannaBakes.sweettreats.ST_7.quantity);
+console.log("Remaining items of Donuts",HannaBakes.sweettreats.ST_8.quantity);
+console.log("Remaining items of Cookies",HannaBakes.sweettreats.ST_9.quantity);
+console.log("Remaining items of DessertBars",HannaBakes.sweettreats.ST_10.quantity);
+console.log("Remaining items of Tarts",HannaBakes.sweettreats.ST_11.quantity);
+console.log("Remaining items of WhoopiePies",HannaBakes.sweettreats.ST_12.quantity);
+console.log("Remaining items of Fudge",HannaBakes.sweettreats.ST_13.quantity);
 
+
+console.log(HannaBakes)
+
+ let fliter_store_itemcode ={
+
+     }
+
+
+// const Remaining_items= HannaBakes.sweettreats.map((HannaBakes.sweettreats[codes])=>{
+// HannaBakes.sweettreats[itemcode]});
 </script>
 
 </html>

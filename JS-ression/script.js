@@ -1,33 +1,33 @@
-// // let budget = 180
-// // const Starlink = {
-// //     name: 'starLink',
-// //     Why: "Acess From Anywhere and Anytime",
-// //     Price: 99,
-// //     currency: '$',
-// //     Period: "Per Month",
-// //     Speed: "1Gbps",
-// //     unlimited: true,
-// //     data: "unlimited data",
+let budget = 180
+const Starlink = {
+    name: 'starLink',
+    Why: "Acess From Anywhere and Anytime",
+    Price: 99,
+    currency: '$',
+    Period: "Per Month",
+    Speed: "1Gbps",
+    unlimited: true,
+    data: "unlimited data",
 
-// //     avaialbleCountry : ['ant','af','can','uk'],
-// //     installationDevice:{
-// //         deviceName:"Starlink01010",
-// //         devietype:"router",
-// //         devicePrice:100,
-// //         devicespeed:'1 gbps',
-// //         CuurencyType: "dollar"
-// //     },
+    avaialbleCountry : ['ant','af','can','uk'],
+    installationDevice:{
+        deviceName:"Starlink01010",
+        devietype:"router",
+        devicePrice:100,
+        devicespeed:'1 gbps',
+        CuurencyType: "dollar"
+    },
 
-// // };
+};
 
-// // // console.log(Starlink)// blind method
-// // let InternetFee = Starlink.Price
-// // console.log(InternetFee, "InternetFee");
-// // let devicePrice =Starlink.installationDevice.devicePrice
+// console.log(Starlink)// blind method
+let InternetFee = Starlink.Price
+console.log(InternetFee, "InternetFee");
+let devicePrice =Starlink.installationDevice.devicePrice
 
-// // console.log(devicePrice, "devicePrice");
-// // let  StarlinkInstallationFee = InternetFee+devicePrice;
-// // console.log('$',StarlinkInstallationFee, "StarlinkInstallationFee")
+console.log(devicePrice, "devicePrice");
+let  StarlinkInstallationFee = InternetFee+devicePrice;
+console.log('$',StarlinkInstallationFee, "StarlinkInstallationFee")
 
 
 // let HannaBakes = {
@@ -404,44 +404,53 @@ const bakery = {
         samosa: { price: 10, piece: 20 }
     }
 }
-console.log(bakery.totalproduct.cake)
-console.log(bakery.totalproduct.gulabjamun)
-console.log(bakery.totalproduct.samosa)
+console.log("---------------------------");
+console.log("total quantity in our bakery ");
+console.log("---------------------------");
 
-purchase = {
+console.log('cake',bakery.totalproduct.cake)
+console.log('gulab jamun',bakery.totalproduct.gulabjamun)
+console.log('samosa',bakery.totalproduct.samosa)
+console.log("---------------------------");
+
+ const purchase = {
     purchase1: {
         persons: "1",
         item: "cake",
         piece: "2",
-        remaining: "8"
+        purchased: "2"
     },
     purchase2: {
         persons: "4",
         item: "gulabjamun",
         piece: "10",
-        remaining: "10"
+        purchased: "10"
 
     },
     purchase3: {
         persons: "6",
         item: "samosa",
         piece: "18",
-        remaining: "2"
+        purchased: "18"
     }
 };
 
+console.log("---------------------------");
 
-bakery.totalproduct.cake.piece -= purchase.purchase1.piece;           // 10 - 2 = 8
-bakery.totalproduct.gulabjamun.piece -= purchase.purchase2.piece;     // 30 - 10 = 20
-bakery.totalproduct.samosa.piece -= purchase.purchase3.piece;         // 20 - 18 = 2
+
+console.log("cake remaining pieces after customer purchased:",bakery.totalproduct.cake.piece -= purchase.purchase1.piece);           // 10 - 2 = 8
+console.log("gulab jamun remaining pieces after customer purchased:",bakery.totalproduct.gulabjamun.piece -= purchase.purchase2.piece);     // 30 - 10 = 20
+console.log("samosa remaining pieces after customer purchased:",bakery.totalproduct.samosa.piece -= purchase.purchase3.piece);         // 20 - 18 = 2
+console.log("---------------------------");
 //remaining items
 console.log("Remaining items in the bakery:")
 console.log("cake: piece-" + bakery.totalproduct.cake.piece + ", price-₹" + bakery.totalproduct.cake.price);
 console.log("gulabjamun: piece-" + bakery.totalproduct.gulabjamun.piece + ", price-₹" + bakery.totalproduct.gulabjamun.price);
 console.log("samosa: piece-" + bakery.totalproduct.samosa.piece + ", price-₹" + bakery.totalproduct.samosa.price)
-
+console.log("---------------------------");
 //purchase display
 
 console.log(purchase.purchase1)
 console.log(purchase.purchase2)
 console.log(purchase.purchase3)
+console.log("---------------------------");

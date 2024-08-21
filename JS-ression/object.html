@@ -8,21 +8,36 @@
 </head>
 <body>
    <script>
-    const Starlink= {
-        name:'starLink',
-        Why:"Acess From Anywhere and Anytime",
-        Price:99,
-        currency:'$',
-        Period:"Per Month",
-        Speed:"1Gbps",
-        unlimited: true,
-        data:"unlimited data"
+   let budget = 180
+const Starlink = {
+    name: 'starLink',
+    Why: "Acess From Anywhere and Anytime",
+    Price: 99,
+    currency: '$',
+    Period: "Per Month",
+    Speed: "1Gbps",
+    unlimited: true,
+    data: "unlimited data",
 
-    };
-    console.log(Starlink)// blind method
-    let price = Starlink.Price
-    console.log(price);
-    console.log(Starlink.currency);
+    avaialbleCountry : ['ant','af','can','uk'],
+    installationDevice:{
+        deviceName:"Starlink01010",
+        devietype:"router",
+        devicePrice:100,
+        devicespeed:'1 gbps',
+        CuurencyType: "dollar"
+    },
+
+};
+
+// console.log(Starlink)// blind method
+let InternetFee = Starlink.Price
+console.log(InternetFee, "InternetFee");
+let devicePrice =Starlink.installationDevice.devicePrice
+
+console.log(devicePrice, "devicePrice");
+let  StarlinkInstallationFee = InternetFee+devicePrice;
+console.log('$',StarlinkInstallationFee, "StarlinkInstallationFee")
     
     
    </script> 
